@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: harinagmicroservicesdemo 
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: harinagmicroservicesdemo
+  template:
+    metadata:
+      labels:
+        app: harinagmicroservicesdemo 
+    spec:
+      containers:
+        - name: harinagmicroservicesdemo 
+          image: hariazurecontreg.azurecr.io/harinagmicroservicesdemo
+          ports:
+          - containerPort: 9555
